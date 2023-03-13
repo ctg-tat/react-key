@@ -4,6 +4,8 @@ import Product from "../components/Product/Product.jsx";
 import {useState} from "react";
 import Slider from "../components/Slider/Slider.jsx";
 
+import saleImg from "../../src/assets/images/product.png";
+
 const Main = () => {
 
     const [products, setProducts] = useState(PRODUCTS);
@@ -83,7 +85,7 @@ const Main = () => {
                                 </div>
                             </div>
 
-                            <img src="src/assets/images/product.png" alt=""/>
+                            <img src={saleImg} alt=""/>
                         </div>
 
                         <div className="product">
@@ -117,7 +119,7 @@ const Main = () => {
                                 </div>
                             </div>
 
-                            <img src="src/assets/images/product.png" alt=""/>
+                            <img src={saleImg} alt=""/>
                         </div>
 
                         <div className="product">
@@ -151,7 +153,7 @@ const Main = () => {
                                 </div>
                             </div>
 
-                            <img src="src/assets/images/product.png" alt=""/>
+                            <img src={saleImg} alt=""/>
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,9 @@ import PRODUCTS from "../../Data/PRODUCTS.js";
 import {useState} from "react";
 import SliderItem from "./SliderItem/SliderItem.jsx";
 
+import prevImg from "../../assets/images/left.png";
+import nextImg from "../../assets/images/right.png";
+
 const Slider = () => {
 
     const [items, setItems] = useState(PRODUCTS);
@@ -22,7 +25,7 @@ const Slider = () => {
                     {
                         currentIndex <= 0 || (
                             <div onClick={prev} className="arrow-left">
-                                <img src="src/assets/images/left.png" alt=""/>
+                                <img src={prevImg} alt=""/>
                             </div>
                         )
                     }
@@ -30,7 +33,7 @@ const Slider = () => {
                     {
                         currentIndex >= items.length - 1 || (
                             <div onClick={next} className="arrow-right">
-                                <img src="src/assets/images/right.png" alt=""/>
+                                <img src={nextImg} alt=""/>
                             </div>
                         )
                     }
