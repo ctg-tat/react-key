@@ -1,5 +1,4 @@
 import PRODUCTS from "../../Data/PRODUCTS.js";
-import Slide from "../Slide/Slide.jsx";
 import {useState} from "react";
 import SliderItem from "./SliderItem/SliderItem.jsx";
 

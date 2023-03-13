@@ -28,15 +28,17 @@ const Header = () => {
 
                 <nav>
                     <ul className="header-list">
-                        <li><a href="#">Каталог</a></li>
-                        <li><a href="#">Скидки</a></li>
-                        <li><a href="#">Подписка</a></li>
+                        <li><a href="#catalog">Каталог</a></li>
+                        <li><a href="#sale">Скидки</a></li>
+                        <li><a href="#mailing">Подписка</a></li>
                     </ul>
                 </nav>
 
                 <div className="buttons">
                     <CartButton />
-                    <IconUser/>
+                    <NavLink to={'/user'}>
+                        <IconUser/>
+                    </NavLink>
                 </div>
             </div>
         </header>

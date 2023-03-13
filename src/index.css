@@ -101,7 +101,7 @@ li {
 
 .slide-text {
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 19px;
 
     color: #FFFFFF;
@@ -134,7 +134,7 @@ li {
 }
 
 .banner-content {
-    width: 1170px;
+    max-width: 1170px;
 }
 
 .margin {
@@ -415,12 +415,13 @@ footer{
     height: 100vh;
     background-color: #fff;
 
-    padding: 50px;
+    padding: 40px;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
 
 /* Basket */
 
@@ -432,7 +433,7 @@ footer{
 
 .overflow{
     overflow-y: scroll;
-    height: 65vh;
+    height: 60vh;
     padding: 0px 30px 0px 0px;
     margin-bottom: 50px;
 }
@@ -440,6 +441,7 @@ footer{
 .basket-item{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 20px;
 }
 
@@ -509,3 +511,38 @@ footer{
     grid-column: 2/5;
 }
 
+.userpage{
+    min-height: 90vh;
+    padding: 40px 0px;
+}
+
+.userpage-display{
+    display: flex;
+    gap: 40px;
+}
+
+.userpage .column2{
+    flex: 2;
+    margin-top: 20px;
+}
+
+.userpage img{
+    width: 150px;
+}
+
+@media screen and (max-width: 576px) {
+    .products{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    section{
+        padding: 80px 15px !important;
+    }
+
+    .header{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

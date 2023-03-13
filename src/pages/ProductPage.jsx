@@ -1,17 +1,16 @@
 import {IconCart} from "../Icon/Icon.jsx";
 import {useParams} from "react-router-dom";
 import PRODUCTS from "../Data/PRODUCTS.js";
+import {useContext} from "react";
+import {CartContext} from "./Root.jsx";
 
 const ProductPage = () => {
 
-    const productId = useParams().id;
+    const {id} = useParams();
 
-    const product = PRODUCTS.find((product, index) => {
+    const product = PRODUCTS.find((p) => p.id === parseInt(id));
 
-        if(product.id.toString() === productId){
-            return product;
-        }
-    });
+    const { addToCart } = useContext(CartContext);
 
     return (
         <div className="margin product-page wrapper">
@@ -36,9 +35,9 @@ const ProductPage = () => {
 
                 <div className="info">
                     <div className="buttons">
-                        <a href="src/components/Main#" className="button-cart">
+                        <button onClick={addToCart.bind(this, product)} className="button-cart">
                             <IconCart/>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>

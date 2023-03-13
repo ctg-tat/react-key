@@ -3,6 +3,7 @@ import {Outlet} from "react-router-dom";
 import Footer from "../components/Footer/Footer.jsx";
 import CartModal from "../components/CartModal/CartModal.jsx";
 import {createContext, useState} from "react";
+import useCart from "../components/hooks/useCart.js";
 
 export const ModalContext = createContext(null);
 export const CartContext = createContext({});

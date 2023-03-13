@@ -10,7 +10,7 @@ const SliderItem = ({product}) => {
                     <div className="overtext">Home</div>
 
                     <p className="slide-text">
-                        {product.text}
+                        {product.text.substring(0, 200)}...
                     </p>
                 </div>
             </div>

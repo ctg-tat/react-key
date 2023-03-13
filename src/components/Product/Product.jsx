@@ -1,7 +1,13 @@
 import {NavLink} from "react-router-dom";
 import {IconCart} from "../../Icon/Icon.jsx";
+import {useContext} from "react";
+import {CartContext} from "../../pages/Root.jsx";
+import formatMoney from "../../utils/formatMoney.js";
 
 const Product = ({product}) => {
+
+    const {addToCart} = useContext(CartContext);
+
     return(
         <div className="product">
             <div className="product-content">
@@ -15,7 +21,7 @@ const Product = ({product}) => {
                         </p>
 
                         <p className="price-value">
-                            {product.price} ₽
+                            {formatMoney(product.price)} ₽
                         </p>
                     </div>
 
@@ -24,9 +30,9 @@ const Product = ({product}) => {
                             Подробнее
                         </NavLink>
 
-                        <a href="src/components/Main#" className="button-cart">
+                        <button className="button-cart" onClick={addToCart.bind(this, product)}>
                             <IconCart/>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>

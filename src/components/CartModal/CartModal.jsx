@@ -1,5 +1,8 @@
 import {useContext, useRef} from "react";
-import {ModalContext} from "../../pages/Root.jsx";
+import {CartContext, ModalContext} from "../../pages/Root.jsx";
+import CartItem from "../CartItem/CartItem.jsx";
+import cartTotal from "../../utils/cartTotal.js";
+import formatMoney from "../../utils/formatMoney.js";
 
 const CartModal = () => {
 
@@ -12,6 +15,12 @@ const CartModal = () => {
         }
     }
 
+    // Baket add
+
+    const cart = useContext(CartContext);
+
+    const total = cartTotal(cart.cartItems);
+
     return(
         <section className={`modal ${modal ? 'active' : ''}`} onClick={(e) => close(e)} ref={overlayRef}>
             <div className="okno">
@@ -22,110 +31,14 @@ const CartModal = () => {
 
                     <div className="overflow">
                         <div className="basket-items">
-                            <div className="basket-item">
-                                <div className="column">
-                                    <img className="basket-img" src="src/assets/images/product.png" alt=""/>
-                                </div>
-                                <div className="column">
-                                    <div className="button-close">
-                                        <img src="src/assets/images/delete.png" alt=""/>
-                                    </div>
+                            {
+                                cart.cartItems.map((item) => {
+                                    return(
+                                        <CartItem key={item.id} item={item}/>
+                                    )
+                                })
+                            }
 
-                                    <p className="basket-item_name">
-                                        Купить Microsoft Office 2019 Professional...
-                                    </p>
-
-                                    <div className="basket-price">
-                                        <p className="price">
-                                            1 190 ₽
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="basket-item">
-                                <div className="column">
-                                    <img className="basket-img" src="src/assets/images/product.png" alt=""/>
-                                </div>
-                                <div className="column">
-                                    <div className="button-close">
-                                        <img src="src/assets/images/delete.png" alt=""/>
-                                    </div>
-
-                                    <p className="basket-item_name">
-                                        Купить Microsoft Office 2019 Professional...
-                                    </p>
-
-                                    <div className="basket-price">
-                                        <p className="price">
-                                            1 190 ₽
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="basket-item">
-                                <div className="column">
-                                    <img className="basket-img" src="src/assets/images/product.png" alt=""/>
-                                </div>
-                                <div className="column">
-                                    <div className="button-close">
-                                        <img src="src/assets/images/delete.png" alt=""/>
-                                    </div>
-
-                                    <p className="basket-item_name">
-                                        Купить Microsoft Office 2019 Professional...
-                                    </p>
-
-                                    <div className="basket-price">
-                                        <p className="price">
-                                            1 190 ₽
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="basket-item">
-                                <div className="column">
-                                    <img className="basket-img" src="src/assets/images/product.png" alt=""/>
-                                </div>
-                                <div className="column">
-                                    <div className="button-close">
-                                        <img src="src/assets/images/delete.png" alt=""/>
-                                    </div>
-
-                                    <p className="basket-item_name">
-                                        Купить Microsoft Office 2019 Professional...
-                                    </p>
-
-                                    <div className="basket-price">
-                                        <p className="price">
-                                            1 190 ₽
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="basket-item">
-                                <div className="column">
-                                    <img className="basket-img" src="src/assets/images/product.png" alt=""/>
-                                </div>
-                                <div className="column">
-                                    <div className="button-close">
-                                        <img src="src/assets/images/delete.png" alt=""/>
-                                    </div>
-
-                                    <p className="basket-item_name">
-                                        Купить Microsoft Office 2019 Professional...
-                                    </p>
-
-                                    <div className="basket-price">
-                                        <p className="price">
-                                            1 190 ₽
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -137,7 +50,7 @@ const CartModal = () => {
                         </div>
 
                         <div className="order-summa_price">
-                            1 190 ₽
+                            {formatMoney(total)} ₽
                         </div>
                     </div>
 

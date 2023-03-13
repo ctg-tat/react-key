@@ -2,7 +2,6 @@ import {IconCart} from "../Icon/Icon.jsx";
 import PRODUCTS from "../Data/PRODUCTS.js";
 import Product from "../components/Product/Product.jsx";
 import {useState} from "react";
-import Slide from "../components/Slide/Slide.jsx";
 import Slider from "../components/Slider/Slider.jsx";
 
 const Main = () => {
@@ -22,7 +21,7 @@ const Main = () => {
                 </div>
             </section>
 
-            <section className="margin">
+            <section className="margin" id="catalog">
                 <div className="wrapper">
                     <h1 className="section-title">
                         Каталог
@@ -46,7 +45,7 @@ const Main = () => {
                 </div>
             </section>
 
-            <section className="margin">
+            <section className="margin" id="sale">
                 <div className="wrapper">
                     <h1 className="section-title margin-bottom">
                         Скидки
@@ -158,7 +157,7 @@ const Main = () => {
                 </div>
             </section>
 
-            <section className="margin">
+            <section className="margin" id="mailing">
                 <div className="wrapper">
                     <h1 className="section-title">
                         Подключайся

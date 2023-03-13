@@ -4,6 +4,9 @@ import Img3 from '../assets/images/product3.png';
 import Img4 from '../assets/images/product4.png';
 
 import ImgBig from '../assets/images/slide1.png';
+import ImgBig2 from '../assets/images/b2.png';
+import ImgBig3 from '../assets/images/b3.jpg';
+import ImgBig4 from '../assets/images/b4.png';
 
 const PRODUCTS = [
     {
@@ -28,7 +31,7 @@ const PRODUCTS = [
         name: "Купить Microsoft Office 2019 Professional plus для 1 ПК",
         text: "Microsoft Office 2019 - это очередное обновление комплекта самых популярных офисных программ, позволяющих работать с различного рода документацией, создавать презентации и оптимизировать рабочее время.",
         img: Img2,
-        imgBig: ImgBig,
+        imgBig: ImgBig2,
         price: 1790,
         license: "Бессрочная",
         bit_depth: "x32/x64",
@@ -45,7 +48,7 @@ const PRODUCTS = [
             "\n" +
             "Создатели учат их обходить защиту современных операционных систем и изобретают все более изощренные методы внедрения с целью заполучить ваши персональные данные или использовать ресурсы вашего компьютера в своих целях.",
         img: Img3,
-        imgBig: ImgBig,
+        imgBig: ImgBig3,
         price: 1050,
         license: "Бессрочная",
         bit_depth: "x32/x64",
@@ -60,7 +63,7 @@ const PRODUCTS = [
             "\n" +
             "Но, к счастью, можно решить эту проблему раз и на всегда, если вы приобретете проверенную качественную антивирусную программу. Серия DR.WEB на рынке давно и для многих пользователей станет отличным выбором.",
         img: Img4,
-        imgBig: ImgBig,
+        imgBig: ImgBig4,
         price: 1790,
         license: "Бессрочная",
         bit_depth: "x32/x64",
